@@ -40,8 +40,6 @@ class MainFragment : Fragment() {
 
         binding.listsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
 
-        binding.listsRecyclerview.adapter = ListSelectionRecyclerViewAdapter()
-
         return binding.root
     }
 
