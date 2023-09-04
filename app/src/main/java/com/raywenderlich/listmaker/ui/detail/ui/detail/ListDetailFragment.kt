@@ -22,9 +22,8 @@ class ListDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel =
-            ViewModelProvider(requireActivity()).get(ListDetailViewModel::class.java)
-        viewModel = ViewModelProvider(this).get(ListDetailViewModel::class.java)
+        viewModel = ViewModeProvider(requireActivity()).get(ListDetailViewModel::class.java)
+
         var title = viewModel.list.name
 
         val recyclerAdapter =

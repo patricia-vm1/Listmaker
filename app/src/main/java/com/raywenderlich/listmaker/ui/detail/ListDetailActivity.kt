@@ -5,11 +5,13 @@ import android.text.InputType
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.listmaker.MainActivity
 import com.raywenderlich.listmaker.R
 import com.raywenderlich.listmaker.databinding.ListDetailActivityBinding
 import com.raywenderlich.listmaker.models.TaskList
 import com.raywenderlich.listmaker.ui.detail.ui.detail.ListDetailFragment
+import com.raywenderlich.listmaker.ui.detail.ui.detail.ListDetailViewModel
 
 class ListDetailActivity : AppCompatActivity() {
 
@@ -20,12 +22,15 @@ class ListDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ListDetailActivityBinding.inflate(layoutInflater)
 
+
         val view = binding.root
         setContentView(view)
         binding.addTaskButton.setOnClickListener { showCreateTaskDialog()
         }
 
         list = intent.getParcelableExtra(MainActivity.INTENT_LIST_KEY)!!
+
+
         title = list.name
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
