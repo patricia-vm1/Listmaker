@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.raywenderlich.listmaker.databinding.ListSelectionViewHolderBinding
 import com.raywenderlich.listmaker.models.TaskList
 
-class ListSelectionRecyclerViewAdapter( val lists : MutableList<TaskList>,
+class ListSelectionRecyclerViewAdapter( private val lists : MutableList<TaskList>,
     val clickListener: ListSelectionRecyclerViewClickListener) :
     RecyclerView.Adapter<ListSelectionViewHolder>() {
 
